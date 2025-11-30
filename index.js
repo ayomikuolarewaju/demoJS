@@ -1,10 +1,19 @@
 const test = document.getElementById("hello");
 const btn = document.getElementById("btn")
+const main = document.getElementById("list")
+const list = document.createElement('ol')
+
+
+main.appendChild(list)
+
+
 
 const sum = (f1, f2) => {
   const total = f1 + f2;
   return total;
 };
+
+
 setTimeout(() => {
   test.innerHTML = sum(5, 8);
   test.style.backgroundColor = "red";
@@ -23,7 +32,7 @@ test.addEventListener("click", () => {
 
 btn.addEventListener('click',()=>{
   test.innerHTML = "Welcome to JS World My World";
-  test.style.backgroundColor = "grey";
+  test.style.backgroundColor = "orange";
   test.style.color = "blue";
   test.style.padding = "15px";
   test.style.textAlign = "center";
@@ -45,3 +54,18 @@ const change = ()=>{
 setTimeout(()=>{
     sum(6,9) == 15 ? change() : alert("No")
 },10000)
+
+const fruits = ["banana","apple","orange","berry","pineapple"]
+
+for( x = 0; x < fruits.length; x++){
+  const item = document.createElement('li')
+  item.innerHTML = fruits[x]
+  list.appendChild(item)
+}
+
+// fruits.forEach((fruit)=>{
+//   const item = document.createElement('li')
+//   item.innerHTML = fruit
+//   list.appendChild(item)
+// })
+
